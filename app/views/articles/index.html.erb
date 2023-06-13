@@ -1,9 +1,11 @@
-<h1>Wikis</h1>
-
+<div class="container">
 <% @articles.each do |article| %>
-<h2><%= link_to article.title, article_path(article) %></h2>
-<p><%= article.content %></p>
-<%= link_to "Un job de plus en moins!", article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<div class="row">
+  <h2><%= link_to article.title, article_path(article) %></h2>
+  <p><%= article.content %></p>
+  <p><%= link_to "Un job de plus en moins!", article_path(article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+</div>
 <% end %>
 
-<p><%= link_to "Encore plus de connaissances ?", new_article_path %></p>
+<p><%= link_to "Mettez-en plus !", new_article_path %></p>
+</div>
